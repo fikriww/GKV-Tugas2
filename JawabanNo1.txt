@@ -1,0 +1,35 @@
+	1.	Inisialisasi OpenGL (Fungsi init())
+	  •	Mengatur warna latar belakang menjadi hitam (glClearColor(0.0, 0.0, 0.0, 0.0))
+	  •	Mengatur mode pencahayaan (glShadeModel(GL_FLAT)) agar shading datar digunakan.
+	2.	Fungsi display() – Menampilkan Objek
+	  •	glClear(GL_COLOR_BUFFER_BIT): Menghapus tampilan layar sebelum menggambar ulang.
+	  •	glPushMatrix(): Menyimpan keadaan transformasi saat ini.
+	  •	Transformasi Bahu
+	    •	glTranslatef(-1.0, 0.0, 0.0): Memindahkan titik pusat rotasi ke posisi bahu.
+	    •	glRotatef((GLfloat) shoulder, 0.0, 0.0, 1.0): Memutar bahu terhadap sumbu z.
+	    •	glTranslatef(1.0, 0.0, 0.0): Memindahkan kembali posisi ke lengan atas.
+	    •	glScalef(2.0, 0.4, 1.0): Mengatur ukuran bagian lengan atas.
+	    •	glutWireCube(1.0): Menggambar lengan atas berbentuk kubus kawat.
+	  •	Transformasi Siku
+	    •	glTranslatef(1.0, 0.0, 0.0): Memindahkan titik pusat rotasi ke posisi siku.
+	    •	glRotatef((GLfloat) elbow, 0.0, 0.0, 1.0): Memutar siku terhadap sumbu z.
+	    •	glTranslatef(1.0, 0.0, 0.0): Memindahkan kembali posisi ke lengan bawah.
+	    •	glScalef(2.0, 0.4, 1.0): Mengatur ukuran bagian lengan bawah.
+	    •	glutWireCube(1.0): Menggambar lengan bawah berbentuk kubus kawat.
+	  •	glPopMatrix(): Mengembalikan matriks transformasi ke keadaan sebelumnya.
+	  •	glutSwapBuffers(): Menampilkan hasil rendering.
+	3.	Fungsi reshape() – Mengatur Tampilan Ketika Window Diubah
+	  •	glViewport(0, 0, w, h): Menentukan ukuran tampilan agar sesuai dengan ukuran window.
+	  •	gluPerspective(65.0, (GLfloat) w / (GLfloat) h, 1.0, 20.0): Mengatur proyeksi perspektif dengan sudut pandang 65 derajat.
+	  •	glTranslatef(0.0, 0.0, -5.0): Memindahkan kamera menjauh agar objek terlihat.
+	4.	Fungsi keyboard() – Mengontrol Gerakan Lengan
+  	•	Jika tombol s ditekan, sudut rotasi shoulder bertambah 5 derajat.
+  	•	Jika tombol S ditekan, sudut rotasi shoulder berkurang 5 derajat.
+  	•	Jika tombol e ditekan, sudut rotasi elbow bertambah 5 derajat.
+  	•	Jika tombol E ditekan, sudut rotasi elbow berkurang 5 derajat.
+  	•	Jika tombol Esc ditekan (case 27), program keluar.
+	5.	Fungsi main() – Fungsi Utama
+  	•	Melakukan inisialisasi GLUT dan membuat window.
+  	•	Mengatur tampilan awal dengan init().
+  	•	Menetapkan fungsi callback untuk menampilkan (display), mengubah ukuran (reshape), dan menangani input keyboard (keyboard).
+  	•	Memulai loop utama glutMainLoop() agar program terus berjalan.
