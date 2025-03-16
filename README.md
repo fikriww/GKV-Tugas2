@@ -1,4 +1,5 @@
 hasil praktikum:
+
 ![1](https://github.com/user-attachments/assets/a8d63745-89ce-4366-b968-9364e09108ab)
 ![2](https://github.com/user-attachments/assets/7e51f042-e84b-4db9-9395-377dad267f1b)
 ![3](https://github.com/user-attachments/assets/19263656-7428-46c2-bb77-e85e36d22c2a)
